@@ -1,0 +1,65 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SITE TEST</title>
+    <style>
+        body {
+            text-align: center;
+            color:aliceblue;
+            background: black;
+            font: normal 18pt Arial;
+        }
+        input#qs {
+            width: 90px;
+            height: 50px;
+            text-align: center;
+            font: normal 19pt Arial;
+        }
+        input#total {
+            width: 70px;
+            height: 30px;
+            text-align: center;
+            font: normal 10pt Arial;
+            background: rgb(13, 255, 13);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>CALCULO DE SABONETES</h1>
+    <input type="number" name="qs" id="qs"> <br>
+   <BR><input type="button" value="ATIVAR" id="total" onclick="total()">
+    <br> <br><div id="ttl">TOTAL</div>
+    <script>
+       function total() {
+       var numerosdesab = document.getElementById("qs")
+        var butao = document.querySelector("input#total")
+        var ttl = document.getElementById('ttl')
+        var n = Number(numerosdesab.value)
+        var dini = 1.155 + 0.175 + 0.45 + 0.13 + 0.054 + 0.10
+        var soma = n * dini
+        var mais = (dini + 0.70) * n
+        var s =  ttl.innerHTML = `TOTAL DE GASTO: ${soma.toFixed(2)} <br> 
+        TOTAL DE GASTO/OLEO: ${mais.toFixed(2) } <br>
+        _____________________________________________ <br>
+        BASE:  R$${(n *1.155).toFixed(2)} / ${n * 55}G <br>
+        EXTRATO: R$${(n * 0.17).toFixed(2)} / ${n * 5}ML <br>
+        EXCENCIA: R$${(n * 0.45).toFixed(2)} / ${n * 3}ML <br> 
+        LAURIL: R$${(n * 0.13).toFixed(2)} / ${n * 5}ML <br>
+        GLICERINA: R$${(n * 0.05).toFixed(2)} / ${n * 3}ML <br>
+        ARGILA: R$${(n * 0.10).toFixed(2)} / ${n * 5}G <br> 
+        OLEO VERGETAL: R$${(n * 0.70).toFixed(2)} / ${n*10}ML <br>
+        _____________________________________________ <br>
+        LUCRO BRUTO: R$${(soma * 2.5).toFixed(2)} <br>
+        LUCRO LIQUIDO: R$${(soma * 1.5).toFixed(2)}<br>
+        _____________________________________________ <br>
+        LUCRO BRUTO/OLEO: R$${(mais * 2.5).toFixed(2)} <br>
+        LUCRO LIQUIDO: R$${(mais * 1.5).toFixed(2)}`
+       }
+    </script>
+</body>
+</html>
